@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SC</title>	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">Test</h1>
+		<div class="row">
+			<div id="character-div" class="col-sm-12">
+				<span id="zerg" class="character" data-name="z"><img src='./assets/images/placeholdit100x100.png'></span>
+				<span id="terran" class="character" data-name="t"><img src='./assets/images/placeholdit100x100.png'></span>
+				<span id="protoss" class="character" data-name="p"><img src='./assets/images/placeholdit100x100.png'></span>
+				<span id="kerrigan" class="character" data-name="k"><img src='./assets/images/placeholdit100x100.png'></span>
+			</div>
+			<hr>
+
+			<div id="hero-div" class="col-sm-12">
+				<button id="selectHero" class="btn btn-default">Select Hero</button>
+			</div>
+			<hr>
+
+			<div id="enemy-div" class="col-sm-12">
+				<button id="selectEnemy" class="btn btn-default" style="display: none;">Select Enemy</button>
+			</div>
+			<hr>
+
+			<div class="col-sm-12">
+					<button id="attack" class="btn btn-default">Attack</button>
+			</div>
+			<hr>
+
+			<div class="col-sm-12">	
+			</div>
+	</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>	
+<script type="text/javascript" src="./assets/javascript/game.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.row .col-sm-12 {
+	text-align: center;
+}
+
+.character.selected img {
+	border: 10px solid black;
+	border-radius: 15px;
+}
+
+.character.hero img {
+	border: 10px solid blue;
+	border-radius: 15px;
+}
+
+.character.currentEnemy img {
+	border: 10px solid red;
+	border-radius: 15px;	
+}
