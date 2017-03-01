@@ -1,3 +1,9 @@
+body {
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .row .col-sm-12 {
 	text-align: center;
 }
@@ -19,6 +25,10 @@
 
 .character img {
 	border-radius: 10px;
+	width: 200px;
+	height: 200px;
+	background-color: lightgrey;
+	margin: 10px;
 }
 
 .character .stats {
