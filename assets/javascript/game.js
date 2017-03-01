@@ -125,10 +125,16 @@ $( "#attack" ).click(function() {
     heroActive.hp = heroActive.hp + 5;
     enemyActive.attack(heroActive);
 
+    $( "*[data-name='" + heroActive.name +"'" ).find( "span.stats" ).text(" HP: " + heroActive.hp);
+    $( "*[data-name='" + enemyActive.name +"'" ).find( "span.stats" ).text(" HP: " + enemyActive.hp);
+
     console.log(heroActive);
     console.log(enemyActive);
 
-    if ( enemyActive.hp < 0 && enemyCount > 0 ) {
+    if ( heroActive.hp <= 0 ) {
+        $( "h1.text-center" ).text("You lost!");
+    }
+    if ( enemyActive.hp <= 0 && enemyCount > 0 ) {
         $( ".character.currentEnemy" ).remove();
         enemyCount--;
         $( "#selectEnemy" ).show();

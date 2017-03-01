@@ -16,3 +16,11 @@
 	border: 10px solid red;
 	border-radius: 15px;	
 }
+
+.character img {
+	border-radius: 10px;
+}
+
+.character .stats {
+	display: inline-block;
+}
