@@ -4,8 +4,8 @@ var z = {
         name: "z",
         isHero: false,
         isEnemy: true,
-        hp: 115,
-        dmg: 8,
+        hp: 90,
+        dmg: 10,
         becomeHero: function() {
         	this.isHero = true;
         	this.isEnemy = false;
@@ -17,7 +17,7 @@ var z = {
             return instantDamage;
         },
         killCount: 0,
-        rate: 0,
+        rate: 0.50,
 
 };
 
@@ -26,7 +26,7 @@ var t = {
         isHero: false,
         isEnemy: true,
         hp: 100,
-        dmg: 10,
+        dmg: 11,
         becomeHero: function() {
         	this.isHero = true;
         	this.isEnemy = false;
@@ -38,7 +38,7 @@ var t = {
             return instantDamage;
         },
         killCount: 0,
-        rate: 0,
+        rate: 0.25,
 
 };
 
@@ -46,7 +46,7 @@ var p = {
         name: "p",
         isHero: false,
         isEnemy: true,
-        hp: 90,
+        hp: 115,
         dmg: 12,
         becomeHero: function() {
         	this.isHero = true;	
@@ -59,7 +59,7 @@ var p = {
             return instantDamage;
         },
         killCount: 0,
-        rate: 0,
+        rate: 0.1,
 
 };
 
@@ -68,7 +68,7 @@ var k = {
         isHero: false,
         isEnemy: true,
         hp: 200,
-        dmg: 20,
+        dmg: 15,
         becomeHero: function() {
             this.isHero = true; 
             this.isEnemy = false;
@@ -162,9 +162,9 @@ $( "#attack" ).click(function() {
             var enemyActive = k;
     } 
 
-    // Each time new enemy is selected:
+    // At the start of each new round
     if ( isNewEnemy ) {
-        heroActive.hp = heroActive.hp + 30;
+        heroActive.hp = heroActive.hp + 20;
         enemyOriginalHP = enemyActive.hp;
         isNewEnemy = false;
     }
@@ -187,13 +187,13 @@ $( "#attack" ).click(function() {
             + "</br> HP: " + Math.round(enemyActive.hp) 
             + "</br> Critical: " + ( Math.round(enemyActive.rate *100) ) + "%" );
 
-    //
+    // Show the damages dealt as fading elements
     $( "*[data-name='" + heroActive.name +"'" ).find( "span.stats" ).append($instantEnemy);
     $( "*[data-name='" + enemyActive.name +"'" ).find( "span.stats" ).append($instantHero);
 
     // For debugging purpose
-    console.log(heroActive);
-    console.log(enemyActive);
+    //console.log(heroActive);
+    //console.log(enemyActive);
 
     // WHEN ALL ENEMIES ARE DYSTROED
     if ( enemyCount === 1 && enemyActive.hp <= 0 ) {
@@ -210,9 +210,9 @@ $( "#attack" ).click(function() {
     // WHEN CURRENT ENEMY IS DESTROYED
     else if ( enemyActive.hp <= 0 && enemyCount > 0 ) {
         heroActive.killCount++;
-        heroActive.dmg = heroActive.dmg + heroActive.killCount * (0.25 * enemyActive.dmg );
-        heroActive.hp = heroActive.hp + (0.5 * enemyOriginalHP);
-        heroActive.rate = heroActive.rate + (1/3);
+        heroActive.dmg = heroActive.dmg + heroActive.killCount * (0.50 * enemyActive.dmg );
+        heroActive.hp = heroActive.hp + (0.60 * enemyOriginalHP);
+        heroActive.rate = heroActive.rate + (0.35);
         $( "*[data-name='" + heroActive.name +"'" ).find( "span.stats" ).html(" Attack: " + heroActive.dmg + " </br> HP: " + heroActive.hp);
         $( ".character.currentEnemy" ).remove();
         enemyCount--;
