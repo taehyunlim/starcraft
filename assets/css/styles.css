@@ -4,8 +4,16 @@ body {
 
 hr {
 	display: inherit;
-	border: 3px solid rgba(55, 105, 230, 0.5);
+	border: 3px solid rgba(77, 162, 226, 0.9);
 	border-radius: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#logo {
+	text-align: center;
+	margin-top: 30px;
+    margin-bottom: 25px;
 }
 
 .row .col-sm-12 {
@@ -13,12 +21,12 @@ hr {
 }
 
 .character.selected img {
-	border: 10px solid #449fe8;
+	border: 10px solid rgba(77, 162, 226, 0.9);
 	border-radius: 15px;
 }
 
 .character.hero img {
-	border: 10px solid rgba(6, 36, 90, 0.7);
+	border: 10px solid rgba(55, 105, 230, 0.5);
 	border-radius: 15px;
 }
 
@@ -29,8 +37,8 @@ hr {
 
 .character img {
 	border-radius: 10px;
-	width: 200px;
-	height: 200px;
+	width: 150px;
+	height: 150px;
 	background-color: rgba(158, 158, 158, 0.3);
 	margin: 10px;
 	padding: 5px 15px 5px 15px;
@@ -43,4 +51,58 @@ hr {
 
 #hero-div, #enemy-div, #attack-div, #character-div {
 	margin-bottom: 20px;
+}
+
+#hero-div img {
+	float: right;
+}
+
+#enemy-div img {
+	float: left;
+}
+
+#vs-div {
+	color: white;
+	text-align: center;
+}
+
+#vs-div h3 {
+	position: relative;
+	top: 50px;
+}
+
+button#selectHero, button#selectEnemy {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 20px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 992px ) {
+
+	#logo img {
+		width: 200px;
+	}
+
+	#hero-div img, #enemy-div img {
+		float: initial;
+	}
+
+	.character img {
+		width: 125px;
+		height: 125px;
+	}
+
+	#vs-div h3 {
+		top: 0;
+	}
+
+}
+
+.btn-primary {
+	background-image: -webkit-linear-gradient(top,#4da2e2 0,#4da2e2 100%);
+    background-image: -o-linear-gradient(top,#4da2e2 0,#4da2e2 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#4da2e2),to(#4da2e2));
+    background-image: linear-gradient(to bottom,#4da2e2 0,#4da2e2 100%);
 }
